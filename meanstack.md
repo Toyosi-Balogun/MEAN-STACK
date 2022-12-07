@@ -193,7 +193,7 @@ Install body-parser package
 
 >We need *‘body-parser’* package to help us process JSON files passed in requests to the server.
 
-Create a folder named **‘Books’**
+Create a folder named **"Books"**
 
 `$ mkdir Books && cd Books`
 
@@ -209,7 +209,7 @@ You should see something like this:
 
 `vi server.js`
 
-Copy and paste the web server code below into the *"server.js"* file.
+Copy and paste the web server code below into the **"server.js"** file.
 ```
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -231,7 +231,7 @@ We also will use Mongoose package which provides a straightforward, *schema-base
 
 `$ sudo npm install express mongoose`
 
-In ‘Books’ folder, create a folder named apps
+In **"Books"** folder, create a folder named apps
 
 `mkdir apps && cd apps`
 
@@ -239,7 +239,7 @@ Create a file named routes.js
 
 `vi routes.js`
  
-Copy and paste the code below into *"routes.js"*
+Copy and paste the code below into **"routes.js"**
 ```
 var Book = require('./models/book');
 module.exports = function(app) {
@@ -280,11 +280,11 @@ module.exports = function(app) {
 };
 ```
 
-In the ‘apps’ folder, create a folder named models
+In the **"apps"** folder, create a folder named models
 
 `mkdir models && cd models`
 
-Create a file named book.js
+Create a file named **"book.js"**
 
 `vi book.js`
 
