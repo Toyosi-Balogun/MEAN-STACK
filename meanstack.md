@@ -161,7 +161,8 @@ Now using node v12.16.3 (npm v6.14.4)
 To change the default Node.js version, run the following command:
 
 `$ nvm alias default 12.16.3`
----
+
+___
 
 ## Step 2: Install MongoDB
 MongoDB stores data in flexible, JSON-like documents. Fields in a database can vary from document to document and data structure can be changed over time. For our example application, we are adding book records to MongoDB that contain book name, isbn number, author, and number of pages.
