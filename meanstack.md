@@ -5,8 +5,7 @@ MEAN stands for MongoDB, Express.js, AngularJS, and Node.js. MEAN is an end-to-e
 1. **Angular** (Front-end application framework) – Handles Client and Server Requests
 1. **Node.js** (JavaScript runtime environment) – Accepts requests and displays results to end user
 
-
-In this tutorial we're going to implement a simple Book Register web form using MEAN stack.
+>In this tutorial we're going to implement a simple Book Register web form using MEAN stack.
 
  ## Preparing prerequisites
 In order to complete this project you will need an AWS account and a virtual server with Ubuntu Server OS, 20.04 LTS (HVM) image.
@@ -21,11 +20,11 @@ Upgrade ubuntu
 
 `$ sudo apt upgrade`
 
-In this tutorial, we will explore three different ways of installing Node.js and npm on Ubuntu 20.04:
+>In this tutorial, we will explore three different ways of installing Node.js and npm on Ubuntu 20.04:
 
-- From the standard Ubuntu repositories. This is the easiest way to install Node.js and npm on Ubuntu and should be sufficient for most use cases. The version included in the Ubuntu repositories is 10.19.0.
-- From the NodeSource repository. Use this repository if you want to install a different Node.js version than the one provided in the Ubuntu repositories. Currently, NodeSource supports Node.js v14.x, v13.x, v12.x, and v10.x.
-- Using nvm (Node Version Manager). This tool allows you to have multiple Node.js versions installed on the same machine. If you are Node.js developer, then this is the preferred way of installing Node.js.
+- From the **"standard Ubuntu repositories"**. This is the easiest way to install Node.js and npm on Ubuntu and should be sufficient for most use cases. The version included in the Ubuntu repositories is 10.19.0.
+- From the **"NodeSource repository."** Use this repository if you want to install a different Node.js version than the one provided in the Ubuntu repositories. Currently, NodeSource supports Node.js v14.x, v13.x, v12.x, and v10.x.
+- Using **"nvm (Node Version Manager)"**. This tool allows you to have multiple Node.js versions installed on the same machine. If you are Node.js developer, then this is the preferred way of installing Node.js.
   
 ### Install Node.js and npm from the Ubuntu repository
 At the time of writing, the Node.js version included in the Ubuntu 20.04 repositories is 10.19.0 which is the previous TLS version.
@@ -55,7 +54,7 @@ NodeSource is a company focused on providing enterprise-grade Node support. It m
 - v12.x - The latest LTS version.
 - v10.x - The previous LTS version.
 
-We’ll install Node.js version 14.x:
+>We’ll install Node.js version 14.x:
 
 Run the following command as a user with sudo privileges to download and execute the NodeSource installation script:
 
@@ -123,7 +122,7 @@ To install the latest available version of Node.js, run:
 
 The output should look something like this:
 
-![Alt text](../../../../C:/Users/hp/mean-stack/assets/8.png)
+![](assets/8.png)
 
 Verify it by printing the Node.js version:
 
@@ -144,7 +143,8 @@ You can list the installed Node.js versions by typing:
 `$ nvm ls`
 
 The output should look something like this:
-![Alt text](../../../../C:/Users/hp/mean-stack/assets/9.png)
+
+![](assets/9.png)
 
 The entry with an arrow on the right (> v10.9.0) is the Node.js version used in the current shell session and the default version is set to v19.2.0. 
 
@@ -161,7 +161,7 @@ Now using node v12.16.3 (npm v6.14.4)
 To change the default Node.js version, run the following command:
 
 `$ nvm alias default 12.16.3`
-___
+---
 
 ## Step 2: Install MongoDB
 MongoDB stores data in flexible, JSON-like documents. Fields in a database can vary from document to document and data structure can be changed over time. For our example application, we are adding book records to MongoDB that contain book name, isbn number, author, and number of pages.
@@ -184,15 +184,15 @@ Verify that the service is up and running
 
 You should see something like this:
 
-![Alt text](../../../../C:/Users/hp/mean-stack/assets/1.png)
+![](assets/1.png)
 
 Install body-parser package
 
 `$sudo npm install body-parser`
 
->We need ‘body-parser’ package to help us process JSON files passed in requests to the server.
+>We need *‘body-parser’* package to help us process JSON files passed in requests to the server.
 
-Create a folder named ‘Books’
+Create a folder named **‘Books’**
 
 `$ mkdir Books && cd Books`
 
@@ -202,9 +202,9 @@ In the Books directory, Initialize npm project
 
 You should see something like this:
 
-![Alt text](../../../../C:/Users/hp/mean-stack/assets/2.png)
- 
-Add a file to it named server.js
+![](assets/2.png)
+
+ Add a file to it named server.js
 
 `vi server.js`
 
@@ -222,6 +222,7 @@ app.listen(app.get('port'), function() {
 });
 ```
 ---
+
 ## Step 3: Install Express and set up routes to the server
 Express is a minimal and flexible Node.js web application framework that provides features for web and mobile applications. **We will use Express to pass book information to and from our MongoDB database**.
 
@@ -286,7 +287,7 @@ Create a file named book.js
 
 `vi book.js`
 
-Copy and paste the code below into *'book.js'*
+Copy and paste the code below into **'book.js'**
 ```
 var mongoose = require('mongoose');
 var dbHost = 'mongodb://localhost:27017/test';
@@ -425,7 +426,8 @@ Start the server by running this command:
 
 You should see something like this:
 
-![Alt text](../../../../C:/Users/hp/mean-stack/assets/3.png)
+![](assets/3.png)
+
 
 The server is now up and running, we can connect it via port 3300. You can launch a separate Putty or SSH console to test what the curl command returns locally.
 
@@ -435,245 +437,27 @@ It shall return an HTML page, it is hardly readable in the CLI, but we can also 
 
 >For this – you need to open TCP port 3300 in your AWS Web Console for our EC2 Instance.
 
-![Alt text](../../../../C:/Users/hp/mean-stack/assets/4.png)
+![](assets/4.png)
 
 **Now we can access our Book Register web application from the Internet with a browser using a Public IP address or Public DNS name.**
 
 This is how your Web Book Register Application will look like in browser:
 
-![Alt text](../../../../C:/Users/hp/mean-stack/assets/5.png)
+![](assets/5.png)
 
 Now let's go ahead to input some data
 
-![Alt text](../../../../C:/Users/hp/mean-stack/assets/6.png)
+![](assets/6.png)
 
 >Remember to refresh on each addition or deletion of entries to see the changes
 
 If you observe, you'd see Mongoose is working in the terminal, reflecting, updating, fetching each actions you take on the browser, concerning deletion and addition.
 
-![Alt text](../../../../C:/Users/hp/mean-stack/assets/7.png)
+![](assets/7.png)
 
 **Congratulations! You've just set up your fully functional MEAN Stack on Ubuntu.**✨Yippee!✨
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Add certificates
-
-`sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates`
-
- `curl -sL  https://deb.nodesource.com/setup_18.x | sudo -E bash -`
-
-Install NodeJS
-
-`$ sudo apt install -y nodejs`
-
-The "-y" flag is a "yes" to answer all default prompts during the installation of these dependencies.
-
-Let’s take a quick look at some of the installed packages:
-
-- npm: a package manager for the NodeJS
-- mongoose: A Node.js framework which lets us access MongoDB in an object-oriented way.
-
-Once the installation is done, you can check the Node version with
-
-`$ node --version`
-```
-Output:
-
-v12.22.12
-```
-`$ npm --version`
-```
-Output:
-
-6.14.16
-```
-
-## Step 2: Install MongoDB
-MongoDB is a non-relational database that stores data in flexible, JSON-like documents. For our example application, we are adding book records to MongoDB that contain book name, isbn number, author, and number of pages.
-
-`$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6`
-```
-Output:
-
-Executing: /tmp/apt-key-gpghome.3OMqavtAhq/gpg.1.sh --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
-gpg: key BC711F9BA15703C6: public key "MongoDB 3.4 Release Signing Key <packaging@mongodb.com>" imported
-gpg: Total number processed: 1
-gpg:               imported: 1
-```
-
-`$ echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list`
-```
-Output:
-
-/etc/apt/sources.list.d/mongodb-org-3.4.list
-deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse
-```
-Install MongoDB
-
-` $sudo apt install -y mongodb`
-
-Start The server
-
-`$sudo service mongodb start`
-
-Verify that the service is up and running
-
-`$sudo systemctl status mongodb`
-
-![](assets/1.png)
-
-Install npm – Node package manager.
-
-`$ sudo apt install -y npm`
-
-Install body-parser package
-We need ‘body-parser’ package to help us process JSON files passed in requests to the server.
-
-`$ sudo npm install body-parser`
-
->It's important to not that 'body-parser' has been depreacted in Node version > 4.0 (This explains the warnings you get when you run 'node server.js'). To be replaced by a more functional express.json which help parse our json files and even more. We won't delve into the implementation as this is just a simple tutorial
-
-Next, create a folder named ‘Books’
-
-`$ mkdir Books && cd Books`
-
-In the Books directory,initialize node and the package manager with:
-
-`$ npm init -y`
-
-You should end up with a package.json file that looks like this:
-```
-Output:
-
-{
-  "name": "ubuntu",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "body-parser": "^1.20.1"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
-}
-```
-
-Add a file to it named server.js
-`$ vi server.js`
-Copy and paste the web server code below into the server.js file.
-```
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
-app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.json());
-require('./apps/routes')(app);
-app.set('port', 3300);
-app.listen(app.get('port'), function() {
-    console.log('Server up: http://localhost:' + app.get('port'));
-});
-```
-
-## Step 3: Install Express and set up routes to the server
-*Express* is a minimal and flexible Node.js web application framework that provides features for web and mobile applications. We will use Express to pass book information to and from our MongoDB database.
-
-We also will use *Mongoose* package which provides a straightforward, schema-based solution to model your application data. We will use Mongoose to establish a schema for the database to store data of our book register.
-
-`$ sudo npm install express mongoose`
-
-In ‘Books’ folder, create a folder named apps
-
-`$ mkdir apps && cd apps`
-
-Create a file named routes.js
-
-`$ vi routes.js`
- 
- 
-Copy and paste the code below into routes.js
-```
-var Book = require('./models/book');
-module.exports = function(app) {
-  app.get('/book', function(req, res) {
-    Book.find({}, function(err, result) {
-      if ( err ) throw err;
-      res.json(result);
-    });
-  }); 
-  app.post('/book', function(req, res) {
-    var book = new Book( {
-      name:req.body.name,
-      isbn:req.body.isbn,
-      author:req.body.author,
-      pages:req.body.pages
-    });
-    book.save(function(err, result) {
-      if ( err ) throw err;
-      res.json( {
-        message:"Successfully added book",
-        book:result
-      });
-    });
-  });
-  app.delete("/book/:isbn", function(req, res) {
-    Book.findOneAndRemove(req.query, function(err, result) {
-      if ( err ) throw err;
-      res.json( {
-        message: "Successfully deleted the book",
-        book: result
-      });
-    });
-  });
-  var path = require('path');
-  app.get('*', function(req, res) {
-    res.sendfile(path.join(__dirname + '/public', 'index.html'));
-  });
-};
-```
-
-In the **‘apps’** folder, create a folder named models
-
-`$ mkdir models && cd models`
-Create a file named book.js
-
-`$vi book.js`
-
-Copy and paste the code below into ‘book.js’
-```
-var mongoose = require('mongoose');
-var dbHost = 'mongodb://localhost:27017/test';
-mongoose.connect(dbHost);
-mongoose.connection;
-mongoose.set('debug', true);
-var bookSchema = mongoose.Schema( {
-  name: String,
-  isbn: {type: String, index: true},
-  author: String,
-  pages: Number
-});
-var Book = mongoose.model('Book', bookSchema);
-module.exports = mongoose.model('Book', bookSchema);
-```
 
 
 
