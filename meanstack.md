@@ -205,7 +205,7 @@ You should see something like this:
 
 ![](assets/2.png)
 
- Add a file to it named server.js
+ Add a file to it named **"server.js"**
 
 `vi server.js`
 
@@ -231,11 +231,11 @@ We also will use Mongoose package which provides a straightforward, *schema-base
 
 `$ sudo npm install express mongoose`
 
-In **"Books"** folder, create a folder named apps
+In **"Books"** folder, create a folder named **"apps"**
 
 `mkdir apps && cd apps`
 
-Create a file named routes.js
+Create a file named **"routes.js"**
 
 `vi routes.js`
  
@@ -280,7 +280,7 @@ module.exports = function(app) {
 };
 ```
 
-In the **"apps"** folder, create a folder named models
+In the **"apps"** folder, create a folder named **"models"**
 
 `mkdir models && cd models`
 
@@ -317,11 +317,12 @@ Create a folder named public
 
 ``mkdir public && cd public``
 
-Add a file named script.js
+Add a file named **"script.js"**
 
 `vi script.js`
+
+Copy and paste the Code below (controller configuration defined) into the **"script.js"** file.
  ```
- Copy and paste the Code below (controller configuration defined) into the script.js file.
  var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope, $http) {
   $http( {
@@ -361,7 +362,7 @@ app.controller('myCtrl', function($scope, $http) {
 });
 ```
 
-In the **public** folder, create a file named **index.html**;
+In the **public** folder, create a file named **"index.html"**;
 
 `vi index.html`
 
